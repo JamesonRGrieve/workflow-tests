@@ -1,0 +1,19 @@
+{
+  "name": "workflow-tests",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "npm run test:mocha && npm run test:jest",
+    "test:mocha": "mocha \"javascript/vanilla/test/**/*.spec.js\"",
+    "test:jest": "jest --config jest.config.js"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.30",
+    "chai": "^4.4.1",
+    "jest": "^29.7.0",
+    "mocha": "^10.3.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.2"
+  }
+}
