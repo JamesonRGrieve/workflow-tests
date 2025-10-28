@@ -4,8 +4,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
-    <OutputType>Exe</OutputType>
     <IsTestProject>true</IsTestProject>
-    <ManualTestRunner>true</ManualTestRunner>
+    <OutputType>Exe</OutputType>
   </PropertyGroup>
 </Project>
