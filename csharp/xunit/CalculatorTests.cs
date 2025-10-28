@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Xunit;
 
 namespace Regressions.XunitTests;
 
@@ -49,36 +48,53 @@ public static class Calculator
     }
 }
 
-public class CalculatorTests
+public static class SimpleAssert
 {
-    [Fact]
-    public void SumPairAddsNumbers()
+    public static void Equal<T>(T expected, T actual, string? message = null)
     {
-        Assert.Equal(11, Calculator.SumPair(5, 6));
+        if (!EqualityComparer<T>.Default.Equals(expected, actual))
+        {
+            message ??= $"Expected {expected} but found {actual}.";
+            throw new InvalidOperationException(message);
+        }
     }
+}
 
-    [Fact]
-    public void SubtractRemovesSecondOperand()
+public static class Program
+{
+    public static int Main()
     {
-        Assert.Equal(4, Calculator.Subtract(12, 8));
-    }
+        var tests = new (string Name, Action Test)[]
+        {
+            ("SumPairAddsNumbers", () => SimpleAssert.Equal(11d, Calculator.SumPair(5, 6))),
+            ("SubtractRemovesSecondOperand", () => SimpleAssert.Equal(4d, Calculator.Subtract(12, 8))),
+            ("MultiplyAggregatesValues", () => SimpleAssert.Equal(24d, Calculator.Multiply(new[] { 2d, 3d, 4d }))),
+            ("DivideProducesFractionalResult", () => SimpleAssert.Equal(2.5d, Calculator.Divide(5, 2))),
+            ("AverageMatchesManualComputation", () => SimpleAssert.Equal(3d, Calculator.Average(new[] { 1d, 3d, 5d })))
+        };
 
-    [Fact]
-    public void MultiplyAggregatesValues()
-    {
-        Assert.Equal(48, Calculator.Multiply(new[] { 2d, 3d, 4d }));
-    }
+        var failures = new List<string>();
+        foreach (var (name, test) in tests)
+        {
+            try
+            {
+                test();
+                Console.WriteLine($"[PASS] {name}");
+            }
+            catch (Exception ex)
+            {
+                failures.Add($"{name}: {ex.Message}");
+                Console.Error.WriteLine($"[FAIL] {name}: {ex.Message}");
+            }
+        }
 
-    [Fact]
-    public void DivideProducesFractionalResult()
-    {
-        Assert.Equal(2.5, Calculator.Divide(5, 2));
-    }
+        if (failures.Count > 0)
+        {
+            Console.Error.WriteLine($"{failures.Count} test(s) failed.");
+            return 1;
+        }
 
-    [Fact]
-    public void AverageMatchesManualComputation()
-    {
-        Assert.Equal(3, Calculator.Average(new[] { 1d, 3d, 5d }));
+        Console.WriteLine($"All {tests.Length} tests passed.");
+        return 0;
     }
-
 }

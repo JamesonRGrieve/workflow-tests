@@ -1,0 +1,5 @@
+<Project>
+  <Target Name="VSTest" Condition="'$(ManualTestRunner)' == 'true'" DependsOnTargets="Build">
+    <Exec Command="dotnet run --no-build --project &quot;$(MSBuildProjectFullPath)&quot;" />
+  </Target>
+</Project>
