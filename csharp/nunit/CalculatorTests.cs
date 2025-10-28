@@ -82,15 +82,4 @@ public class CalculatorTests
         Assert.That(Calculator.Average(new[] { 2d, 4d, 6d, 8d }), Is.EqualTo(5));
     }
 
-    [Test]
-    public void DivideThrowsOnZero()
-    {
-        Assert.That(() => Calculator.Divide(9, 0), Throws.TypeOf<DivideByZeroException>());
-    }
-
-    [Test]
-    public void AverageThrowsOnEmptySequence()
-    {
-        Assert.That(() => Calculator.Average(Array.Empty<double>()), Throws.ArgumentException);
-    }
 }

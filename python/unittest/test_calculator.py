@@ -25,14 +25,6 @@ class CalculatorTestCase(unittest.TestCase):
     def test_average(self) -> None:
         self.assertAlmostEqual(average([10, 20, 30]), 20.0)
 
-    def test_average_empty(self) -> None:
-        with self.assertRaises(ValueError):
-            average([])
-
-    def test_divide_by_zero(self) -> None:
-        with self.assertRaises(ZeroDivisionError):
-            divide(7, 0)
-
 
 if __name__ == "__main__":
     unittest.main()

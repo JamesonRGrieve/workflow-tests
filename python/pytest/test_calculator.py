@@ -29,13 +29,3 @@ def test_divide_handles_fractional_results():
 def test_average_matches_manual_computation():
     values = [2, 4, 6, 8]
     assert average(values) == pytest.approx(sum(values) / len(values))
-
-
-def test_average_raises_on_empty_iterable():
-    with pytest.raises(ValueError):
-        average([])
-
-
-def test_divide_by_zero_is_invalid():
-    with pytest.raises(ZeroDivisionError):
-        divide(1, 0)

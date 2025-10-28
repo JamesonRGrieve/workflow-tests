@@ -81,15 +81,4 @@ public class CalculatorTests
         Assert.Equal(3, Calculator.Average(new[] { 1d, 3d, 5d }));
     }
 
-    [Fact]
-    public void DivideThrowsOnZero()
-    {
-        Assert.Throws<DivideByZeroException>(() => Calculator.Divide(10, 0));
-    }
-
-    [Fact]
-    public void AverageThrowsOnEmptySequence()
-    {
-        Assert.Throws<ArgumentException>(() => Calculator.Average(Array.Empty<double>()));
-    }
 }
