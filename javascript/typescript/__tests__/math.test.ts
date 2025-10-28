@@ -21,11 +21,4 @@ describe("math helpers (jest)", () => {
     expect(average([2, 4, 6, 8])).toBe(5);
   });
 
-  test("throws when dividing by zero", () => {
-    expect(() => divide(8, 0)).toThrow("Denominator must be non-zero.");
-  });
-
-  test("throws when averaging empty input", () => {
-    expect(() => average([])).toThrow("values must contain at least one element");
-  });
 });

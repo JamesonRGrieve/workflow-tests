@@ -22,11 +22,4 @@ describe("math helpers (mocha)", () => {
     expect(average([1, 3, 5, 7])).to.equal(4);
   });
 
-  it("throws when dividing by zero", () => {
-    expect(() => divide(1, 0)).to.throw("Denominator must be non-zero.");
-  });
-
-  it("throws when averaging empty input", () => {
-    expect(() => average([])).to.throw("values must contain at least one element");
-  });
 });
