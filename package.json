@@ -1,0 +1,21 @@
+{
+  "name": "workflow-tests",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "npm run test:all",
+    "test:all": "npm run test:mocha && npm run test:jest && npm run test:storybook",
+    "test:mocha": "node javascript/tools/run-mocha.js",
+    "test:jest": "node javascript/tools/run-jest.js",
+    "test:storybook": "node javascript/tools/run-storybook.js"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.30",
+    "chai": "^4.4.1",
+    "jest": "^29.7.0",
+    "mocha": "^10.3.0",
+    "ts-jest": "^29.1.2",
+    "typescript": "^5.4.2"
+  }
+}
