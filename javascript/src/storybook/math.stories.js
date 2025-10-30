@@ -1,4 +1,4 @@
-const { expect } = require("../vendor/chai");
+const { expect } = require("../chai");
 const math = require("../vanilla/math");
 
 function renderMathStory({ label, compute, expected }) {
