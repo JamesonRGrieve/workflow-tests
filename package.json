@@ -5,9 +5,9 @@
   "scripts": {
     "test": "npm run test:all",
     "test:all": "npm run test:mocha && npm run test:jest && npm run test:storybook",
-    "test:mocha": "node javascript/tools/run-mocha.js",
-    "test:jest": "node javascript/tools/run-jest.js",
-    "test:storybook": "node javascript/tools/run-storybook.js"
+    "test:mocha": "node javascript/run-mocha.js",
+    "test:jest": "node javascript/run-jest.js",
+    "test:storybook": "node javascript/run-storybook.js"
   },
   "devDependencies": {
     "@types/jest": "^29.5.12",

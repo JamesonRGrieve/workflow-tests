@@ -1,4 +1,4 @@
-import { average, divide, multiply, subtract, sumPair } from "../math";
+import { average, divide, multiply, subtract, sumPair } from "../src/math";
 
 describe("math helpers (jest)", () => {
   test("adds two numbers", () => {

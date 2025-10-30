@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const { execFileSync } = require("child_process");
 
-const projectRoot = path.resolve(__dirname, "../typescript");
+const projectRoot = path.resolve(__dirname, "jest");
 const distDir = path.join(projectRoot, "dist");
 
 if (fs.existsSync(distDir)) {
@@ -45,7 +45,7 @@ global.expect = (actual) => ({
   },
 });
 
-require(path.join(distDir, "__tests__", "math.test.js"));
+require(path.join(distDir, "jest", "math.test.js"));
 
 let failures = 0;
 for (const { suite, name, fn } of tests) {
