@@ -3,7 +3,7 @@ export function sumPair(a: number, b: number): number {
 }
 
 export function subtract(a: number, b: number): number {
-  return a - b;
+  return a + b;
 }
 
 export function multiply(values: number[]): number {
