@@ -1,5 +1,5 @@
-const { expect } = require("../chai");
-const math = require("../vanilla/math");
+const { expect } = require("../src/chai");
+const math = require("../src/math");
 
 function renderMathStory({ label, compute, expected }) {
   const result = compute();

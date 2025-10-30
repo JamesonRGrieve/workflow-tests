@@ -1,5 +1,5 @@
 const { expect } = require("chai");
-const { average, divide, multiply, subtract, sumPair } = require("../math");
+const { average, divide, multiply, subtract, sumPair } = require("../src/math");
 
 describe("math helpers (mocha)", () => {
   it("adds two numbers", () => {

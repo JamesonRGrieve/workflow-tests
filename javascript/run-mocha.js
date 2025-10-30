@@ -26,7 +26,7 @@ global.it = (name, fn) => {
   });
 };
 
-const testDir = path.resolve(__dirname, "../vanilla/test");
+const testDir = path.resolve(__dirname, "mocha");
 
 function collectTests(dir) {
   for (const entry of fs.readdirSync(dir)) {

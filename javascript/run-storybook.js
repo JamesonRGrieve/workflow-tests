@@ -120,7 +120,7 @@ async function runStoryFile(file) {
 }
 
 async function main() {
-  const storyRoot = path.join(__dirname, "..", "storybook");
+  const storyRoot = path.join(__dirname, "storybook");
   const files = collectStoryFiles(storyRoot);
 
   if (!files.length) {
