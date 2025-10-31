@@ -24,4 +24,4 @@ consume the same implementation regardless of framework.
 
 Each test runner should import functionality from its sibling `src` directory. When
 adding new examples, keep implementation logic in `src` so that multiple frameworks can
-exercise the same code paths.
+exercise the same code.

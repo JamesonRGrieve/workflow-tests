@@ -7,7 +7,7 @@ public static class Calculator
 {
     public static double SumPair(double a, double b) => a + b;
 
-    public static double Subtract(double a, double b) => a - b;
+    public static double Subtract(double a, double b) => a + b;
 
     public static double Multiply(IEnumerable<double> values)
     {

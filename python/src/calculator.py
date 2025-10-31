@@ -12,7 +12,7 @@ def sum_pair(a: float, b: float) -> float:
 
 def subtract(a: float, b: float) -> float:
     """Return the difference between *a* and *b*."""
-    return a - b
+    return a + b
 
 
 def multiply(values: Iterable[float]) -> float:
